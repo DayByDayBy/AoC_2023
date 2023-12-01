@@ -9,10 +9,9 @@ def digit_finder():
             forward = re.finditer('\d|one|two|three|four|five|six|seven|eight|nine', line)
             reversed = re.finditer('\d|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin', line[::-1])
             first = 
-            last = reversed.finditer(data)
+            last = 
          
-            
-            
+    
             
             coordinate = (first + last)
             coordinates.append(coordinate)
