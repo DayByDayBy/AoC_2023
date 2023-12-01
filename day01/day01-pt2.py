@@ -14,12 +14,12 @@ def find_digits():
         'eight': '8', 
         'nine': '9'
         }
-    with open('day01input.txt', 'r') as provided_text:
-        for string in provided_text:
+    with open('day01input.txt', 'r') as data:
+        for string in data:
             first_num = None
             last_num = None
             nums = re.finditer('\d|one|two|three|four|five|six|seven|eight|nine', string)
-        
+            print(nums)
             for num in nums:
                 match = num.group()
                 if match.isdigit():
