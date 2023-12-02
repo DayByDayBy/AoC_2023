@@ -22,13 +22,14 @@ def poss_games(self):
 
     for round_data in self.rounds:
         if (
-            sum(value for color, value in round_data.items() if color == 'red') < red or
-            sum(value for color, value in round_data.items() if color == 'green') < green or 
-            sum(value for color, value in round_data.items() if color == 'blue') < blue
+            round_data.get('red', 0) > red or
+            round_data.get('green', 0) > green or 
+            round_data.get('blue', 0) > blue
         ):
             poss = False
-            break      
-    if poss == True:
+            break
+
+    if poss:
         possible_games.append(self.id)
 
 def powers(self):
