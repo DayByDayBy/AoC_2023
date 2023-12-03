@@ -1,7 +1,7 @@
 class Game:
     def __init__(self, game_data, rounds_data):
         self.id = int(game_data.split()[-1])
-        self.rounds = self.parse_rounds(rounds_data)
+        self.rounds = self.parse_rounds(rounds_data)  
 
     def parse_rounds(self, rounds_data):
         rounds = []
@@ -28,7 +28,6 @@ def poss_games(self):
         ):
             poss = False
             break
-
     if poss:
         possible_games.append(self.id)
 
@@ -42,7 +41,7 @@ def powers(self):
     for count in max_counts.values():
         result *= count
     game_powers.append(result)    
-
+    
 games = []
 possible_games = []
 game_powers = []
@@ -52,18 +51,10 @@ with open("game_data.txt", "r") as data:
         game_data, rounds_data = i.strip().split(": ")
         game = Game(game_data, rounds_data)
         games.append(game)
-        
-        
+            
 for game in games:
     poss_games(game)
     powers(game)
     
 print(sum(possible_games))
 print(sum(game_powers))
-
-
-    
-    
-
-
-
