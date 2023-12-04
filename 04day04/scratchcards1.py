@@ -1,5 +1,6 @@
 import re 
 
+
 class Card():
     def __init__ (self, id, win_nums, play_nums):
         self.id = id
@@ -7,7 +8,8 @@ class Card():
         self.play_nums = play_nums
     
 def scratchy():
-    cards = []
+    all_points = []
+    cards = []    
     with open('cards.txt', 'r') as data:
         for line in data:
             card = re.split(r'[:|]', line)
@@ -16,11 +18,15 @@ def scratchy():
             play_nums = tuple(map(int, card[2].split()))
             card = Card(id, win_nums, play_nums)
             cards.append(card)
+    for card in cards:
+            matches = set(card.win_nums) & set(card.play_nums)
+            score  = len(matches)
+            points = 0
+            if score > 0: 
+                points += 2 ** (score - 1)
+            print(f"{card.id} matched {score} for {points} points")
+            all_points.append(points)
+    return all_points
 
-    return cards             
-card_list = scratchy()
-for card in card_list:
-    print(f"{card.id} - W: {card.win_nums} P: {card.play_nums}")
-            
-            
-            
+all_points = scratchy()
+print(sum(all_points))
