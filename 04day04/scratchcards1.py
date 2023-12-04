@@ -24,13 +24,3 @@ for card in card_list:
             
             
             
-            
-            #      id = card_data[1].strip()
-            # win_nums = tuple(map(int, data[2].split()))
-            # player_nums = tuple(map(int, data[3].split()))     
-            
-            
-            
-            # game_ID = int(game_info[0].split()[-1])
-            # rounds = game_info[1].split("; ")
-            # possible = True
