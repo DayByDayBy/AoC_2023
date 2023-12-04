@@ -33,7 +33,6 @@ def partlist():
             if is_adjacent(number_coords, symbol_locations):
                 adjacent_locations.append(int(number))
                 print(number)
-
     return adjacent_locations
 
 parts = partlist()
