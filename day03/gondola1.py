@@ -1,7 +1,7 @@
 import re
 
 def is_symbol(char):
-    return re.search(r'[^0-9.]', char) is not None  # Check if the result is not None to return a boolean
+    return re.search(r'[^0-9.]', char) is not None  
 
 def is_adjacent(number_coords, symbol_locations):
     for x_num_co, y_num_co in number_coords:
@@ -21,7 +21,7 @@ def partlist():
         for x, char in enumerate(line):
             if is_symbol(char):
                 print(f"Found symbol {char} at ({x}, {y})")
-                symbol_locations.append((x, y))  # Use a tuple for symbol locations
+                symbol_locations.append((x, y))
 
     for y, line in enumerate(grid):
         for match in numbers.finditer(''.join(line)):
