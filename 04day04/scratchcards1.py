@@ -1,12 +1,21 @@
 import re 
 
+# made a class becauase why not
+# felt like a way to make things cleaner, 
+# a more modular approach i could then reuse 
+# for whatever part 2 ends up being
+# not sure it's the cleanest, on reflection.
+# more sleep would probably help, 
+# and tbh my 'best self' would probbaly have incorporated testing, 
+# and maybe some validation like pydantic 
 
-class Card():
+
+class Card(): 
     def __init__ (self, id, win_nums, play_nums):
         self.id = id
         self.win_nums = win_nums
         self.play_nums = play_nums
-    
+
 def scratchy():
     all_points = []
     cards = []    
