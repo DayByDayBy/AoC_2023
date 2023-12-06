@@ -1,5 +1,6 @@
 
 scratchies = [[1]+[numbers.split() for numbers in line[9:].split(" | ")] for line in open(r"cards.txt")]
+# print(scratchies[0])
 scratchy_count = 0 
 
 for card in range(len(scratchies)):
