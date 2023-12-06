@@ -4,26 +4,53 @@
 
 # print(f"{seeds}")
 
-def process_data(file_path):
+def capture(file_path):
 
-    data_dict = {}
+    almanac = {}
     seeds = []
     current_section = None
     with open(file_path, 'r') as file:
-        for line in file:
+        
+        for line in file: # this is now working, grabs the data and makes it nice 
             line = line.strip()
             if line.startswith('seeds:'):
                 seeds = line.split()[1:]
                 print(seeds)
             if line.endswith('map:'):
                 current_section = line.replace(' map:', '')
-                data_dict[current_section] = []
-            elif current_section is not None:
+                almanac[current_section] = []
+            elif current_section is not None and line:
                 data_list = list(map(int, line.split()))
-                data_dict[current_section].append(data_list)
-    for key, value in data_dict.items():
+                almanac[current_section].append(data_list)
+                
+    for key, value in almanac.items():
         print(f"{key}: {value}")
         
+    for key, value in almanac.items():
+        for key in almanac:
+            for i in value:  
+                seed = i[0]
+                soil = i[1]
+                shift = i[2]
+                print()
+            
+        
+    # for i in almanac:
+    #     print(value[i][0])
+   
+    print(almanac)
+    
+    # for i in seeds():
+        
+        
+        
+        
+    
+
+        
+    
+    
+    print(seeds)
         
         
 #         
@@ -37,7 +64,7 @@ def process_data(file_path):
 #   l = location
 #   
 # 
-
+# seed to soil > soil to fertilizer > fertilizer to water
 #   
 # 
 #         
@@ -50,4 +77,4 @@ def process_data(file_path):
 #         
 
 
-process_data('smallmanac.txt')
+capture('smallmanac.txt')
