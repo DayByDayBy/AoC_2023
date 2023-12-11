@@ -12,6 +12,7 @@ def seedmap(data_link):
         seed_range = seeds[i+1]
         spread = range(seed_start, seed_start+seed_range)     
         all_seeds.extend(spread)
+    # print(all_seeds)
         
     def findmin(start, mapping):
         for m in mapping.split('\n')[1:]:
