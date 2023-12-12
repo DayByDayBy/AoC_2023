@@ -37,7 +37,3 @@ def seedmap(data_link):
 
 # seedmap('smallmanac.txt')
 seedmap('almanac.txt')
-
-
-
-
