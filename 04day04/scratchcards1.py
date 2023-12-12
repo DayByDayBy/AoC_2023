@@ -31,7 +31,7 @@ def scratchy():
             matches = set(card.win_nums) & set(card.play_nums)
             score  = len(matches)
             points = 0
-            if score > 0: 
+            if score > 0:
                 points += 2 ** (score - 1)
             print(f"{card.id} matched {score} for {points} points")
             all_points.append(points)
