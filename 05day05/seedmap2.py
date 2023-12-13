@@ -34,6 +34,8 @@ def seedmap(data_link):
     min_result = min(final_locations)
 
     print(f"minimum: {min_result}")
+    with open('day05min.txt', 'w') as file:
+        file.write(f"minimum: {min_result}")
 
 # seedmap('smallmanac.txt')
 seedmap('almanac.txt')
