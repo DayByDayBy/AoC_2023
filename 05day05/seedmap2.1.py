@@ -53,7 +53,6 @@ def part2(file):
     with open('day05min.txt', 'w') as file:
         file.write(f"range-low: {min(seeds)[0]}")
     
-    
 part2('smallmanac.txt')
 part2('almanac.txt')
 

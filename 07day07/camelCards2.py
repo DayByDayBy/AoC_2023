@@ -2,7 +2,7 @@ card_values = {"J": 2, "2":3, "3":4, "4":5, "5":6, "6":7, "7":8, "8":9, "9":10, 
 hand_values = {"high_card":1, "one_pair":2, "two_pair":3, "three_kind":4, "full_house":5, "four_kind":6, "five_kind":7}
 
 def hand_grab():
-    with open('hands.txt') as data:               
+    with open('smallhands.txt') as data:               
         hands_and_bids = [tuple(i.split()) for i in data.readlines()]   
     return hands_and_bids
     
@@ -18,13 +18,13 @@ def hand_checker(hands_and_bids):
     for hand, bid in hands_and_bids:
         char_counts = {}
         joker_count = 0
-        for char in hand:
-                
-            if char == J:
-                joker_count += 1
-                
-            char_counts[char] = char_counts.get(char, 0)+1
-        max_count = max(char_counts.values(), default = 0)
+        for char in hand:    
+            if char == 'J':
+                joker_count += 1     
+            else:   
+                char_counts[char] = char_counts.get(char, 0)+1
+        max_count = max(char_counts.values(), default = 0) + joker_count
+        # print(max_count)
         if max_count == 5:
             label = 'five_kind'
         elif max_count == 4:
@@ -40,10 +40,9 @@ def hand_checker(hands_and_bids):
         elif max_count == 1:
             label = 'high_card'                 
         labeled_hands.append((hand, int(bid), label))
-        # print(labeled_hands)
         
     sorted_hands = sorted(labeled_hands, key=lambda hand: (hand_sort(hand), card_sort(hand)), reverse=True)
-    print(sorted_hands)
+    # print(sorted_hands)
     scores = [len(sorted_hands) - i for i, _ in enumerate(sorted_hands)]  
     all_winnings = []
     
@@ -53,7 +52,7 @@ def hand_checker(hands_and_bids):
         # print(winnings)
         all_winnings.append(winnings)
         # print(f"{hand[0]}:{winnings}")
-    # print(all_winnings)
+    print(all_winnings)
     print(sum(all_winnings))        
 hand_checker(hand_grab())
     
