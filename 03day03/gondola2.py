@@ -1,3 +1,9 @@
+# not keen on this approach anymore, but leaving it here 
+# so i have it to look at later
+# currently doesnt work - the "(n_x, n_y)" bit - but tbh 
+# fixing it less of a priority atm than doing other stuff
+
+
 import re
 
 def is_gear(char):
@@ -33,7 +39,6 @@ def gears():
                     if is_active_gear(num_loc, gear_loc):                   
                         engaged_gears.append(int(number))                                                                                                    
     return gear_loc, num_loc, engaged_gears
-
 
 gear_locations, num_locations, engaaged_gears = gears()
 # print("Gear Locations:", gear_locations)

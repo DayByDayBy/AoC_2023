@@ -25,7 +25,7 @@ def partlist():
 
     for y, line in enumerate(grid):
         for match in numbers.finditer(''.join(line)):  # numbers, gotta stitch em together
-            start, end = match.span() # start and end of number, necesaary for adjacency checking without multi-digit dupes
+            start, end = match.span() # start and end of number, necessary for adjacency checking without multi-digit dupes
             number = match.group()
             x_start, x_end = start, end - 1         
             number_coords = [(x, y) for x in range(x_start, x_end + 1)] # adjacency checking the range of the whole number 
