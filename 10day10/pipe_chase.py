@@ -97,3 +97,7 @@ Find the single giant loop starting at S. How many steps along the loop does it 
     
     
 """
+
+
+with open('pipes.txt') as data:
+    
