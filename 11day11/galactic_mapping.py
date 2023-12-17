@@ -92,11 +92,14 @@ In this example, after expanding the universe, the sum of the shortest path betw
 Expand the universe, then find the length of the shortest path between every pair of galaxies. What is the sum of these lengths?
 
 """
-import re
 
-galaxy_grid = list(open('galaxy_map.txt')) 
 
-re.findall('^#', galaxy_grid)
+
+# import re
+
+# galaxy_grid = list(open('galaxy_map.txt')) 
+
+# re.findall('^#', galaxy_grid)
 
 
 
