@@ -109,8 +109,6 @@ print(len(empty_square))
 print(start)
 print(grid[62][61])
 
-
-
 # F-7
 # |.|
 # L-J
@@ -120,7 +118,7 @@ e = grid[x-1]
 s = grid[y-1]
 w = grid[x+1]
 
-pipe_types = {'F':(s, w),'-':(e, w), '7':(e, s), '|':(n, s), 'L':(n, w), 'J':(e, n)}
+pipe_types = {'F':(s, e),'-':(e, w), '7':(w, s), '|':(n, s), 'L':(n, e), 'J':(w, n)}
 
 # for y, row in enumerate(grid):   
 #     for number in re.finditer(r'\d+', row):
