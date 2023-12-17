@@ -110,6 +110,18 @@ print(start)
 print(grid[62][61])
 
 
+
+# F-7
+# |.|
+# L-J
+
+n = grid[y+1]
+e = grid[x-1]
+s = grid[y-1]
+w = grid[x+1]
+
+pipe_types = {'F':(s, w),'-':(e, w), '7':(e, s), '|':(n, s), 'L':(n, w), 'J':(e, n)}
+
 # for y, row in enumerate(grid):   
 #     for number in re.finditer(r'\d+', row):
 #         edge = {(y, x) for y in (y-1, y, y+1)
