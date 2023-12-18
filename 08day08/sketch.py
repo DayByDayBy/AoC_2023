@@ -4,16 +4,18 @@ def guide():
     map_data = [x for x in open('map.txt').read().strip().split('\n\n')]
     directions  = list(map_data[0])
     nodes = {}
+    # print(directions)
     
     for map in map_data[1].split("\n"):
         a = map.split(" ")[0]
         b = map.split("(")[1].split(",")[0]
         c = map.split(" ")[3].split(")")[0]
-        nodes[a] = (b, c)   
+        nodes[a] = (b, c)
+    # print(nodes)
          
     key = 'AAA'
     node_count = 0
-    print(directions)
+    # print(directions)
     while key != 'ZZZ':
         d = directions[node_count % len(directions)]
         key = nodes[key][0 if d == 'L' else 1]
@@ -25,9 +27,11 @@ def guide():
         node_count = 0
         while not key.endswith('Z'):
             d = directions[node_count % len(directions)]
+            # print(d)
             key = nodes[key][0 if d == 'L' else 1]
             node_count += 1
         return node_count
+    # print(node_count)
     end_counter = 1
     for node in nodes:
         if node.endswith('A'):

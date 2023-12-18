@@ -1,28 +1,36 @@
 import math
 
-def guide(file_path):   
-    with open(file_path) as data:
-        node_dict = {}
-        lines = data.read().splitlines()     
-    directions = list(lines[0].strip())
-    starting_nodes = [key for key in node_dict if key.endswith('A')]  
+def guide():
+    map_data = [x for x in open('map.txt').read().strip().split('\n\n')]
+    directions  = list(map_data[0])
+    nodes = {}
     
-    total = 0
-    lcm_steps = 1  
-    
-    for start_pos in starting_nodes:
-        current_node = nodes[start_pos]
-        node_count = 0
-        
-        while current_node != node_dict['ZZZ']:
-            for d in directions:
-                current_node_key = current_node[0] if d == 'L' else current_node[1] 
-                current_node = node_dict[current_node_key]
-                node_count += 1
-        print(f"steps:{node_count}")  
-        total += node_count
-        lcm_steps += math.lcm(lcm_steps, node_count)
-    print("total: ", total)         
-    print("lcm: ", lcm_steps)
+    for map in map_data[1].split("\n"):
+        a = map.split(" ")[0]
+        b = map.split("(")[1].split(",")[0]
+        c = map.split(" ")[3].split(")")[0]
+        nodes[a] = (b, c)   
          
-guide('map.txt')
+    key = 'AAA'
+    node_count = 0
+    while key != 'ZZZ':
+        d = directions[node_count % len(directions)]
+        key = nodes[key][0 if d == 'L' else 1]
+        node_count += 1
+    print("node count:", node_count)
+    
+    def second_half(node):
+        key = node
+        node_count = 0
+        while not key.endswith('Z'):
+            d = directions[node_count % len(directions)]
+            key = nodes[key][0 if d == 'L' else 1]
+            node_count += 1
+        return node_count
+    end_counter = 1
+    for node in nodes:
+        if node.endswith('A'):
+            end_counter = math.lcm(end_counter, second_half(node))
+    print("node counter: ", end_counter)
+
+guide()
