@@ -9,12 +9,10 @@ def guide(file_path):
             node_key = parts[0].strip()
             node_values = tuple(part.strip() for part in parts[1].replace('(', '').replace(')', '').split(','))      
             node_dict[node_key] = node_values
-                
+                         
     def path_find():
         path = list(directions)
         current_node = node_dict['AAA']
-                                                # print(f"without: {current_node}")
-                                                # print(f" with: {current_node[0]}")
         node_count = 0   
         while current_node != node_dict['ZZZ']:
             for p in path:
@@ -26,11 +24,6 @@ def guide(file_path):
                     current_node_key = current_node[1]
                     current_node = node_dict[current_node_key]
                     node_count += 1
-        print(f"steps:{node_count}")
-                
-    path_find()    
-    
+        print(f"steps:{node_count}")              
+    path_find()
 guide('map.txt')
-
-
-# some not-quote logic, lol - dinner and another look
