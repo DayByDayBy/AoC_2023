@@ -1,43 +1,36 @@
-
-def guide():
-    node_dict = {}
-    with open('smallmap.txt') as data:
-        lines = data.read().strip().split('\n')
-        directions = lines[0]
-        nodes = lines[2:]
-        for node_line in nodes:
-            parts = node_line.split('=')
-            node_name = parts[0].strip()
-            node_values = tuple(part.strip() for part in parts[1].strip('()').split(','))
-            node_dict[node_name] = node_values
-        # print(node_dict)         
-
-# quick sketch
-
-
+def guide(file_path):   
+    with open(file_path) as data:
+        node_dict = {}
+        lines = data.read().splitlines()
+    directions = list(lines[0].strip())
+    for line in lines[1:]:
+        parts = line.split('=')
+        if len(parts) == 2:
+            node_key = parts[0].strip()
+            node_values = tuple(part.strip() for part in parts[1].replace('(', '').replace(')', '').split(','))      
+            node_dict[node_key] = node_values
+                
     def path_find():
         path = list(directions)
-        node_dest = node_dict['AAA']
-        node_count = 0
-        for node in node_dict:
-            while node_dest is not 'ZZZ':
-                for p in path in range(len(path)):
-                    if p == 'L':
-                        node_dest = node[0]  
-                        node_count += 1
-                    elif p == 'R':
-                        node_dest = node[1]
-                        node_count += 1
-            else:
-                print(node_count)
-
-                            
+        current_node = node_dict['AAA']
+                                                # print(f"without: {current_node}")
+                                                # print(f" with: {current_node[0]}")
+        node_count = 0   
+        while current_node != node_dict['ZZZ']:
+            for p in path:
+                if p == 'L':
+                    current_node_key = current_node[0]
+                    current_node = node_dict[current_node_key]
+                    node_count += 1
+                elif p == 'R':
+                    current_node_key = current_node[1]
+                    current_node = node_dict[current_node_key]
+                    node_count += 1
+        print(f"steps:{node_count}")
                 
-        print(path)
-        
-    
     path_find()    
-guide()
+    
+guide('map.txt')
 
 
 # some not-quote logic, lol - dinner and another look
