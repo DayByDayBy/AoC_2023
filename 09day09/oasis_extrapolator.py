@@ -49,11 +49,11 @@ while any(gap != 0 for gap in gap_list):
     gap_list = new_gap_list
 
 
-# print(gap_list_2d)
+print(gap_list_2d)
 
-# for i, gap_list in enumerate(gap_list_2d):
-#     # print(f"{i}: {gap_list}")
-#     print(gap_list_2d[i][-1])
+for i, gap_list in enumerate(gap_list_2d):
+    # print(f"{i}: {gap_list}")
+    print(gap_list_2d[i][-1])
     
 
   
