@@ -48,16 +48,31 @@
 # The Elves are concerned the lagoon won't be large enough; if they follow their dig plan, how many cubic meters of lava could it hold?
 
 
-dig_plan = [x for x in open('smallplan.txt').read().split('\n')]
-instruction = dig_plan[0].split()
+
+# not yet committed because its kind busted logic 
+# 
+# need to grab lines, but current set up is grabbbing that first line and not really helping me grab them all as a process
+
+
+
+dig_plan = [x for x in open('plan.txt').read().split('\n')]
+# print(dig_plan)
+instruction = [d for d in dig_plan][0]
+print(instruction)
 direction = instruction[0]
 distance = instruction[1]
 colour = instruction[2].strip('()')
 
-print("direction:", direction,"\ndistance:", distance, "\ncolour:", colour)
+print("\ndirection:", direction,"\ndistance:", distance, "\ncolour:", colour)
 
 
-# def guide():
-#     map_data = [x for x in open('map.txt').read().strip().split('\n\n')]
-#     directions  = list(map_data[0])
-#     nodes = {}
+distances = []
+while len(distances)< len(dig_plan):                      
+    for d in dig_plan:
+        distances.append(instruction[1]) 
+        # print(distances)
+longest = max(distances)
+
+print(longest)
+    
+    
