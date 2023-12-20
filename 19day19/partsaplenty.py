@@ -51,15 +51,31 @@
 
 
 
-
+import re
 
 workflows = [x for x in open('workflows.txt').read().split('\n')]
 # print(workflows[0])
+instruction_list = []
 for flow in workflows:
-    name = flow.split('{')[0]
-    instructions = flow.split(',')[0::]
-print(name)
-print(instructions)
+    flow_sections =  re.split(r'[{},]', flow)
+    flow_sections.pop()
+    name = flow_sections[0]
+    instruction = flow_sections[1:]
+    instruction_list.append((name, instruction))
+    
+    for line in instruction_list:
+        print(f"inst: {line}")
+    
+    
+    
+#     name = flow_sections[0]
+#     instructions = flow_sections[1:]
+#     instruction_list.append([name, instructions])
+# print(instruction_list[573])
+
+# [('pht', ''), [('', 'x>2122:A,A')]]
+
+
     
     
     # ft {
@@ -67,3 +83,8 @@ print(instructions)
     #     m<1967:A,
     #     A
     # }
+    
+    
+    
+    
+    
