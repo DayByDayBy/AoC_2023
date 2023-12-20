@@ -53,9 +53,25 @@
 
 import re
 
+
+
+
+
+import re
+
+part_data = [x for x in open('ratedparts.txt').read().split('\n')]
+parts_rated = {}
+# print(part_data)
+for line in part_data:
+    matches = re.findall(r'(\w+)=(\d+)', line)           
+    for category, rating in matches:
+        parts_rated[category] = rating    
+    print(parts_rated)
+
 workflows = [x for x in open('workflows.txt').read().split('\n')]
 # print(workflows[0])
 instruction_list = []
+    
 for flow in workflows:
     flow_sections =  re.split(r'[{},]', flow)
     flow_sections.pop()
@@ -63,8 +79,24 @@ for flow in workflows:
     instruction = flow_sections[1:]
     instruction_list.append((name, instruction))
     
-    for line in instruction_list:
-        print(f"inst: {line}")
+# print(parts_rated, "\n", instruction_list[0])
+# for part in parts_rated:
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    # for line in instruction_list:
+    #     # print(f"inst: {instruction_list}")
+    #     if instruction.startswith(x, m, a, s):
+
+        
     
     
     
