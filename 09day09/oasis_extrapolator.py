@@ -42,18 +42,37 @@ while any(gap != 0 for gap in gap_list):
     gap_list_2d.append(new_gap_list)
     gap_list = new_gap_list
 
-
-print(gap_list_2d)
+# print('gap_list','\n', gap_list_2d, '\n', 'gap_list')
+last_num = []
+next_gap = []
+next_num = []
 
 for i, gap_list in enumerate(gap_list_2d):
     # print(f"{i}: {gap_list}")
-    print(gap_list_2d[i][-1])
+    # print(gap_list_2d[i][-1])
+    last_num.append(gap_list_2d[i][-1])
+    next_gap.append(gap_list_2d[i][-1])
+    # print(next_gap)
+for i in range(len(next_gap)):
+        next_num.append(
+            [next_gap[i] + last_num[i+1]]
+            )
+    
+    # print(i,":", next_gap[i]) 
+print(last_num)
+print(next_gap)
+print(next_num)
+
+    
+    
+    
     
 
   
   
   
 #   ////////////////////////////////////  //////////////////////////////////  
+
 # from sklearn.linear_model import LinearRegression
      
     
