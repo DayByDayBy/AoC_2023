@@ -68,7 +68,7 @@
 with open('hailstones.txt') as hailstones:
     lines = hailstones.readlines()
     for line in lines:
-        print(line)
+        # print(line)
         a, b = line.split('@')
-        print(a, b, c, d)
+        print(a, '\n', b)
         
