@@ -110,3 +110,8 @@
 # So, in this example, 5 bricks can be safely disintegrated.
 
 # Figure how the blocks will settle based on the snapshot. Once they've settled, consider disintegrating a single brick; how many bricks could be safely chosen as the one to get disintegrated?
+
+with open('snapshot.txt') as snapshot:
+    lines = snapshot.readlines()
+    for line in lines:
+        print(line)

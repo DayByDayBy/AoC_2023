@@ -63,3 +63,9 @@
 
 # Find the longest hike you can take through the hiking trails listed on your map. How many steps long is the longest hike?
 
+
+with open ('trailmap.txt') as trailmap:
+    lines = trailmap.readlines()
+    for line in lines:
+        print(line)
+print('\n\n', 'linecount:', len(lines))
