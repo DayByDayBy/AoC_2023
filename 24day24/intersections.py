@@ -65,3 +65,10 @@
 
 # Considering only the X and Y axes, check all pairs of hailstones' future paths for intersections. How many of these intersections occur within the test area?
 
+with open('hailstones.txt') as hailstones:
+    lines = hailstones.readlines()
+    for line in lines:
+        print(line)
+        a, b = line.split('@')
+        print(a, b, c, d)
+        
