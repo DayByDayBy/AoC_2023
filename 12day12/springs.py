@@ -71,3 +71,13 @@
             For each row, count all of the different arrangements of operational and broken springs that meet the given criteria. What is the sum of those counts?
 
 """
+
+
+# with open('small_condition_records.txt') as records:
+#     lines = records.readlines()
+#     for line in lines:
+#         print(line, '\n')
+with open('condition_records.txt') as records:
+    lines = records.readlines()
+    for line in lines:
+        print(line)

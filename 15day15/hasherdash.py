@@ -26,3 +26,9 @@
 # The current value is multiplied by 17 to become 4148.
 # The current value becomes 52 (the remainder of 4148 divided by 256).
 # So, the result of running the HASH algorithm on the string HASH is 52.
+
+
+with open ('smallnitialisation.txt') as initialisation:
+    strings = initialisation.read().split(',')
+    for string in strings:
+        print(string)

@@ -77,3 +77,9 @@
 # However, the Elf actually needs to get 64 steps today, and the map he's handed you is much larger than the example map.
 
 # Starting from the garden plot marked S on your map, how many garden plots could the Elf reach in exactly 64 steps?
+
+
+
+with open('map.txt') as hike_map:
+    lines = hike_map.readlines()
+        fro line in lines

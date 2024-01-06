@@ -60,3 +60,9 @@
         Find the line of reflection in each of the patterns in your notes. What number do you get after summarizing all of your notes?
         
         """
+        
+        
+with open ('smallnotes.txt') as notes:
+    lines = notes.readlines()
+    for line in lines:
+        print(line)
