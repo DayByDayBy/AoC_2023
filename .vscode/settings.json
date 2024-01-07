@@ -1,0 +1,22 @@
+{
+    "folder-color.pathColors": [
+        {
+            // "folderPath": "AdventOfCode/01day01/",
+            // "color": "foldercolorizer.LightRed",
+            // "folderPath": "AdventOfCode/02day02/",
+            // "color": "foldercolorizer.LightRed",
+            // "folderPath": "AdventOfCode/03day03/",
+            // "color": "foldercolorizer.LightRed",
+            // "folderPath": "AdventOfCode/04day04/",
+            // "color": "foldercolorizer.LightRed",
+            // "folderPath": "AdventOfCode/05day05/",
+            // "color": "foldercolorizer.LightRed",
+            // "folderPath": "AdventOfCode/06day06/",
+            // "color": "foldercolorizer.LightRed",
+            // "folderPath": "AdventOfCode/07day07/",
+            // "color": "foldercolorizer.LightRed",
+            "folderPath": "AdventOfCode/08day08/",
+            "color": "foldercolorizer.LightRed"
+        }
+    ]
+}
