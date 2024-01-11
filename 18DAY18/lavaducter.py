@@ -65,7 +65,6 @@ colour = instruction[2].strip('()')
 
 print("\ndirection:", direction,"\ndistance:", distance, "\ncolour:", colour)
 
-
 distances = []
 while len(distances)< len(dig_plan):                      
     for d in dig_plan:

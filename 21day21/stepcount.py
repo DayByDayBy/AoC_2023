@@ -78,8 +78,10 @@
 
 # Starting from the garden plot marked S on your map, how many garden plots could the Elf reach in exactly 64 steps?
 
+import pandas as pd
 
-with open('map.txt') as hike_map:
+with open('small_map.txt') as hike_map:
     lines = hike_map.readlines()
     for line in lines:
         print(line)
+        
