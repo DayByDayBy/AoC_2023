@@ -6,7 +6,6 @@ def acceleration_movement_pairs(n):
         pairs.append((i, n - i))
     return pairs
 
-
 def boatracer():
     race_data = open('races.txt').read()
     times, distances = race_data.split('\n')[:2]

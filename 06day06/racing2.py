@@ -18,7 +18,9 @@ def boatracer():
     for i in acceleration_movement_pairs(time):
         if i[0]*i[1] > distance:
             possible_attempts += 1
-    attempt_list.append(possible_attempts)                      
+    attempt_list.append(possible_attempts)    
+    print(attempt_list[0])                  
     return np.prod(attempt_list)
+
     
 print(boatracer())
