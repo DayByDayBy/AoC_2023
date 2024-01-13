@@ -91,10 +91,9 @@ Here are the distances for each tile on that loop:
 01.78
 14567
 23...
+
 Find the single giant loop starting at S. How many steps along the loop does it take to get from the starting position to the point farthest from the starting position?
 
-
-    
     
 """
 # with open('pipes.txt') as data:

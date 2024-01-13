@@ -64,49 +64,73 @@ difference bwetween the differnce between the dfifference between etc until the 
 ________________________________________________________________
 
 10:
+pipe maze - tunnel mapping, ie follow a path, step length of path to point farthest from start (assume that means farthest 'above ground'?)
 ________________________________________________________________
 
 11:
+galactic mapping
 ________________________________________________________________
 
 12:
+hot springs
 ________________________________________________________________
 
 13:
+point of incidence / mirror hunt
 ________________________________________________________________
 
 14:
+parabolic reflector dish / rock weight
+
 ________________________________________________________________
 
 15:
+leb library / hasher
 ________________________________________________________________
 
 16:
+floor will be lava / 
+
 ________________________________________________________________
+
 17:
+clumsy crucible
+
 ________________________________________________________________
 
 18:
+lavaductor - digging out a lava lagoon via 4 vectors, 4 directions and a distance (and a colour) that describe a path, inside of which is the lagoon area 
+
+'create path', ie desacibe
+
+either keep a record of sides, or distances travelled for for each 'move', or describe a rule for path -  seems like it would be either bulky/comlicated tho. seems like it might be simpler to go with a counter
+
 ________________________________________________________________
 
-19:
+19: aplenty/accept-reject parts
 ________________________________________________________________
 
 20:
+
 ________________________________________________________________
 
 21:
+
 ________________________________________________________________
 
 22:
+
 ________________________________________________________________
 
 23:
+
 ________________________________________________________________
 
 24:
+
 ________________________________________________________________
 
 25:
+
 ________________________________________________________________
 
