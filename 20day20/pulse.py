@@ -116,20 +116,21 @@ class Module:
             self.memory = {}
             
     def __repr__(self):
-        return self.name + "(" + str(self.type) +
+        return self.name + '{type=' + self.type + ', outputs=' + ','.join(self.outputs) + ', memory=' + str(self.memory) + '}'
     
-modules = {}
+modules = {} 
 receivers = []
         
-for line in open ('configuration.txt'):
-    # print(line.split(' -> '))
+for line in open ('small_configuration.txt'):
+    # print(line.split(' -> ')) 
     module, destination = line.strip().split(' -> ')
-    outputs = module.split(', ')
+    outputs = destination.split(', ')
     if module == "broadcaster":
         receivers = outputs
-    else:
+    else: 
         type = module[0]
         name = module[1:]
         modules[name] = Module(name, type, outputs)
         
-     
+# print(receivers) 
+print(modules)       
