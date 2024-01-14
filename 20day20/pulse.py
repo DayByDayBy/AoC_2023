@@ -104,8 +104,19 @@
 # Consult your module configuration; determine the number of low pulses and high pulses that would be sent after pushing the button 1000 times, waiting for all pulses to be fully handled after each push of the button. What do you get if you multiply the total number of low pulses sent by the total number of high pulses sent?
 
 
-
-
+class Module:
+    def __init__(self, name, type, outputs):
+        self.name = name
+        self.type = type
+        self.outputs = outputs
+        
+        if type == "%":
+            self.memory = "off"
+        else:
+            self.memory = {}
+modules = {}
+receivers = []
+        
 with open ('configuration.txt') as data:
     lines = data.readlines()
     # print(lines)
