@@ -104,6 +104,7 @@
 # Consult your module configuration; determine the number of low pulses and high pulses that would be sent after pushing the button 1000 times, waiting for all pulses to be fully handled after each push of the button. What do you get if you multiply the total number of low pulses sent by the total number of high pulses sent?
 
 
+from collections import deque 
 class Module:
     def __init__(self, name, type, outputs):
         self.name = name
@@ -121,7 +122,7 @@ class Module:
 modules = {} 
 receivers = []
         
-for line in open ('small_configuration.txt'):
+for line in open ('configuration.txt'):
     # print(line.split(' -> ')) 
     module, destination = line.strip().split(' -> ')
     outputs = destination.split(', ')
@@ -132,8 +133,41 @@ for line in open ('small_configuration.txt'):
         name = module[1:]
         modules[name] = Module(name, type, outputs)
         
-# print(receivers) 
-for name, m in modules.items():
-    print(m, name, m.type, m.outputs, '\n')
+# # print(receivers) 
+# for name, m in modules.items():
+#     print(m, name, m.type, m.outputs, '\n')
 # print(modules)       
+for name, mod in modules.items():
+    for output in mod.outputs:
+        if output in modules and modules[output].type == "&":
+            modules[output].memory[name] = 'low'
 
+low = high = 0 
+
+for _ in range(1000):
+    low += 1
+    q = deque([("broadcaster", x, "low") for x in receivers])
+    while q:
+        origin, target, pulse = q.popleft()
+        if pulse == "low":
+            low += 1
+        else:
+            high += 1
+        if target not in modules:
+            continue
+        
+        mod = modules[target] 
+        if mod.type == "%":
+            if pulse == "low":
+                mod.memory = "on" if  mod.memory == "off" else "off"
+                outgoing = "high" if mod.memory == "on" else "low "
+                for x in mod.outputs:
+                    q.append((mod.name, x, outgoing))
+        else:
+            mod.memory[origin] = pulse
+            outgoing = "low" if all(x == "high" for x in mod.memory.values()) else "high"
+            for x in mod.outputs:
+                q.append((mod.name, x, outgoing))
+
+
+print(low * high)
