@@ -114,7 +114,7 @@ class Module:
             self.memory = "off"
         else:
             self.memory = {}
-            
+          
     def __repr__(self):
         return self.name + '{type=' + self.type + ', outputs=' + ','.join(self.outputs) + ', memory=' + str(self.memory) + '}'
     
@@ -133,4 +133,7 @@ for line in open ('small_configuration.txt'):
         modules[name] = Module(name, type, outputs)
         
 # print(receivers) 
-print(modules)       
+# for m in modules:
+#     print(m, name, type, outputs, '\n')
+# print(modules)       
+
