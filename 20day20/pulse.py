@@ -133,7 +133,7 @@ for line in open ('small_configuration.txt'):
         modules[name] = Module(name, type, outputs)
         
 # print(receivers) 
-# for m in modules:
-#     print(m, name, type, outputs, '\n')
+for name, m in modules.items():
+    print(m, name, m.type, m.outputs, '\n')
 # print(modules)       
 
