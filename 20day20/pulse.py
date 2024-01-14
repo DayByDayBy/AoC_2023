@@ -117,9 +117,5 @@ class Module:
 modules = {}
 receivers = []
         
-with open ('configuration.txt') as data:
-    lines = data.readlines()
-    # print(lines)
-    for line in lines:
-
-        print(line.split(' -> '))
+for line in open ('configuration.txt'):
+    print(line.split(' -> '))
