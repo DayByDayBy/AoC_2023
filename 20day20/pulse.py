@@ -114,6 +114,10 @@ class Module:
             self.memory = "off"
         else:
             self.memory = {}
+            
+    def __repr__(self):
+        return self.name + "(" + str(self.type) +
+    
 modules = {}
 receivers = []
         
@@ -122,12 +126,10 @@ for line in open ('configuration.txt'):
     module, destination = line.strip().split(' -> ')
     outputs = module.split(', ')
     if module == "broadcaster":
-        receivers = destination.split(', ')
+        receivers = outputs
     else:
         type = module[0]
         name = module[1:]
-        modules[name] = Module(name, type, destination.split(', '))
+        modules[name] = Module(name, type, outputs)
         
-        
-         
-    
+     
