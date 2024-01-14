@@ -118,4 +118,16 @@ modules = {}
 receivers = []
         
 for line in open ('configuration.txt'):
-    print(line.split(' -> '))
+    # print(line.split(' -> '))
+    module, destination = line.strip().split(' -> ')
+    outputs = module.split(', ')
+    if module == "broadcaster":
+        receivers = destination.split(', ')
+    else:
+        type = module[0]
+        name = module[1:]
+        modules[name] = Module(name, type, destination.split(', '))
+        
+        
+         
+    
