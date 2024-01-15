@@ -60,6 +60,7 @@ ________________________________________________________________
 09:
 oasis instability, mirage maintennnce
 difference bwetween the differnce between the dfifference between etc until the difference is 0, then predicting the next in each of those new sequences
+pt1 - last number in seq, next gap (next list down in 2d list), next number (last number plus gap) - had it working then sorta bnroke the logic fiddling with it, tidying up
 
 ________________________________________________________________
 
@@ -112,7 +113,7 @@ ________________________________________________________________
 
 20:
 pulse propagation / counting puleses through, based on module type/rules
-maybe class?
+maybe class? 
 ________________________________________________________________
 
 21:
