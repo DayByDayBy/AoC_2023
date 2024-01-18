@@ -136,3 +136,14 @@ ________________________________________________________________
 
 ________________________________________________________________
 
+
+
+
+
+pandas:
+
+playing with the pandas package lately, thinking it may make sense to use AoC as a way to explore that further - some of the tasks seem pretty appropriate, some less so, but that may also be a good thing, in terms of finding some extra value in the tool 
+
+so far not really 'thinking in pandas', but it does seem like a good way to parse the hug data sets and manipulating them
+
+i reckon list comps will still be useful, but a lot of the pd built ins seem pretty powerful, esp with scikit and numpy
