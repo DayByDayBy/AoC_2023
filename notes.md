@@ -147,3 +147,7 @@ playing with the pandas package lately, thinking it may make sense to use AoC as
 so far not really 'thinking in pandas', but it does seem like a good way to parse the hug data sets and manipulating them
 
 i reckon list comps will still be useful, but a lot of the pd built ins seem pretty powerful, esp with scikit and numpy
+
+update - 
+    life interrupted, still thinking about using data tools for the AoC puzzles
+    also thinking about maybe going back to the first year and working through those first

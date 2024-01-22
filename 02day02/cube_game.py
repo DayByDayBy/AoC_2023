@@ -15,8 +15,7 @@ def bag_count():
                 cubes = round.split(", ")                
                 for pair in cubes:
                     number, colour = pair.split()
-                    number = int(number)
-                    
+                    number = int(number)                    
                     if colour == 'red':
                         red -= number
                     elif colour == 'green':
